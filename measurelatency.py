@@ -25,7 +25,6 @@ regions = ["us-east-1",
         "sa-east-1"
         ]
 for region in regions:
-    print(json.loads(invoke_lambda(region)["Payload"].read().decode("utf-8")))
     latency = json.loads(invoke_lambda(region)["Payload"].read().decode("utf-8"))["latency"]
     print(f"the latency measured in region: {region} for website {sys.argv[1]} is {latency} seconds")
     
