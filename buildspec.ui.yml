@@ -1,0 +1,12 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - apt update -y
+      - apt install zip -y
+  build:
+    commands:
+      - ./buildui.sh
+artifacts:
+  files:
+    - ui.zip
