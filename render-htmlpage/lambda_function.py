@@ -4,5 +4,8 @@ def lambda_handler(event, context):
         body = f.read()
     return {
         'statusCode': 200, 
-        'body': body
+        'body': body,
+        'headers': {
+            "Content-Type": "text/html"
+        }
     }
