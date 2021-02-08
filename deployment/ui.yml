@@ -6,4 +6,4 @@ phases:
       - apt install awscli -y
   build:
     commands:
-      - aws lambda update-function-code --function render-htmlpage --zip-file fileb://ui.zip
+      - aws lambda update-function-code --function render-htmlpage --zip-file fileb://ui.zip --region us-east-1
