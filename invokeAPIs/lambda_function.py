@@ -26,7 +26,10 @@ def lambda_handler(event, context):
         res = f"the latency measured in region: {region} for website {url} is {float(latency)*1000} milli seconds <br>"
     return {
         'statusCode': 200,
-        'body': res
+        'body': res,
+        "header": {
+            "Content-Type": "text/html"
+        }
     }
 
 def invoke_lambda(region, url):
