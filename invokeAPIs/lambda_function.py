@@ -23,11 +23,11 @@ def lambda_handler(event, context):
     url = unquote(base64.b64decode(event["body"]).decode("utf-8"))[4:]
     for region in regions:
         latency = json.loads(invoke_lambda(region, url)["Payload"].read().decode("utf-8"))["latency"]
-        res = f"the latency measured in region: {region} for website {url} is {float(latency)*1000} milli seconds <br>"
+        res += f"the latency measured in region: {region} for website {url} is {float(latency)*1000} milli seconds <br>"
     return {
         'statusCode': 200,
         'body': res,
-        "header": {
+        "headers": {
             "Content-Type": "text/html"
         }
     }
