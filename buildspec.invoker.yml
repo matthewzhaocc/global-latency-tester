@@ -7,7 +7,7 @@ phases:
       - apt install python3 python3-pip -y
   build:
     commands:
-      - ./build.sh
+      - ./buildinvoker.sh
 artifacts:
   files:
     - deployment/*
