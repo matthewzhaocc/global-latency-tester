@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - apt update -y
+      - apt install zip -y
+      - apt install python3 python3-pip -y
+  build:
+    commands:
+      - ./build.sh
+artifacts:
+  files:
+    - deployment/*
+    - invoker.zip
