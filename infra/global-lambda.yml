@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Deploy Latency Tester regional lambda
+
+Resources:
+  LambdaLatencyTesterEndpoint:
+    Type: AWS::Lambda::Function
+    Properties:
+      Timeout: 60
+      FunctionName: apimeasure
+      Handler: lambda_handler.lambda_handler
+      Description: a lambda function to measure latency from regional lambda
+      Runtime: python3.8
+      Role: arn:aws:iam::661723793673:role/lambda-ex
+      Code:
+        S3Bucket: latency-tester-artifacts
+        S3Key: app.zip
